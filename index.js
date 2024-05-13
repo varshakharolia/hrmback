@@ -15,8 +15,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-mongoose.connect('mongodb+srv://varsha:Varsha@123@cluster0.5ydil5b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-    .then(() => console.log('db Connected!'));
+mongoose.connect('mongodb+srv://varsha:Varsha@123@cluster0.5ydil5b.mongodb.net/<your-database-name>?retryWrites=true&w=majority')
+    .then(() => console.log('db Connected!'))
+    .catch(err => console.error('Error connecting to the database:', err));
+
 
 const userSchema = new mongoose.Schema({
     firstName: String,
